@@ -7,29 +7,42 @@ $para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisl lacus, 
 // Array of element to be tested
 // 'title' -> Name of the element to be output 
 // 'class' -> Class to be tested
-// 'content' -> html content to be put
+// 'content' -> html content inside the item (if ommited)
+// 'content_inner -> the conten inside the div (for paragrapher)
 // 'tag' -> hmlt tag to be used
+// 'repeat' -> number of times to repeat the div
+// 'htmlbefore' -> html before
+// 'htmlafter' -> html after
+
 $element['texte'] = array ( 
   array(
-    'title' => 'Titre de niveau 1',
-    'class' => 'ar-tx-title-h1',
+    'title' => 'Les liens de menu du footer',
+    'content' => '<a href="#" >Cum saege</a>',
+    'tag' => 'li',
+    'repeat' => 5,
+    'htmlbefore' => '<ul class="edi-menu-footer">',
+    'htmlafter' => '</ul>',
   ),
   array(
-    'title' => 'Titre de niveau 2',
-    'class' => 'ar-tx-title-h2',
+    'title' => 'Les titres de section',
+    'tag' => 'h2' , 
+    'content' => '<span class="edi-title-bleu" >Mes groupes</span> de travail',
   ),
   array(
-    'title' => 'Titre de niveau 3',
-    'class' => 'ar-tx-title-h3',
+    'title' => 'Les titres H1',
+    'tag' => 'h1'
   ),
   array(
-    'title' => 'Titre de niveau 4',
-    'class' => 'ar-tx-title-h4',
+    'title' => 'Les titres H2',
+    'tag' => 'h2'
   ),
   array(
-    'title' => 'Texte de Teaser',
-    'class' => 'ar-tx-teaser',
-    'content' => $para,
+    'title' => 'Les titres H3',
+    'tag' => 'h3'
+  ),
+  array(
+    'title' => 'Les titres H4',
+    'tag' => 'h4'
   ),
 ); 
     
@@ -38,22 +51,7 @@ $element['button'] = array (
     'title' => 'Bouton',
     'class' => 'seb-button',
   ),
-  array(
-    'title' => 'Boutons transparents',
-    'class' => 'seb-button-trans',
-  ),
-  array(
-    'title' => 'Gros Boutons transparents',
-    'class' => 'seb-button-big-trans',
-  ),
-  array(
-    'title' => 'Boutons rectangulaires',
-    'class' => 'seb-button-rect',
-  ),
-  array(
-    'title' => 'Gros Boutons rectangulaires',
-    'class' => 'seb-button-rect-big',
-  )
+
 );    
     
 ?>

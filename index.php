@@ -34,17 +34,44 @@ include "config.php"; // Configuration file
           foreach ($element as $key => $array) {
             print '<div class="test-group">' . $key;
             foreach ($array as $key1 => $array1) {
-               (isset($array1['content'])) ? $content = $array1['content'] : $content = '';
-               (isset($array1['class'])) ? $class = $array1['class'] : $class = '';
-               (isset($array1['tag'])) ? $tag = $array1['tag'] : $tag = 'div';
+              $content = '';
+              $title = '';
+              $class = '';
+              $tag = '';
+              (isset($array1['class'])) ? $class = $array1['class'] : $class = '';
+              $class = 'class="' . $class . '"';
+              
+              if (isset($array1['title'])){
+                $title = $array1['title'];
+              }else {
+                if (isset($array1['class'])){ $title .= $array1['class']; } 
+                if (isset($array1['tag'])){$title .= $array1['tag']; }
+              }  
+              
+              (isset($array1['content_inner'])) ? $content_inner = $array1['content-inner'] : $content_inner = '';
+              
+               if (isset($array1['content'])) {
+                 $content = $array1['content'];
+               } else {
+                 if (isset($array1['class'])){ $content .= $array1['class']; } 
+                 if (isset($array1['tag'])){$content .= $array1['tag']; } 
+                 
+               }
                
-                print '<div class="test-item" title="' . $array1['title'] . '">' . $array1['title'];
-                  print '<'. $tag . ' class="' . $class . '">' . $class . '</'. $tag .'>';
-                  if ($content != '') {
-                     print '<div class="' . $array1['class']. '">' . $array1['content'] . '</div>';
+               (isset($array1['tag'])) ? $tag = $array1['tag'] : $tag = 'div';
+               (isset($array1['repeat'])) ? $repeat = $array1['repeat'] : $repeat = 1;
+                print '<div class="test-item" title="' . $title . '">' . $title;
+                
+                  if (isset($array1['htmlbefore'])) { print $array1['htmlbefore']; }
+                  for ($i = 0 ; $i< $repeat ; $i++) {
+                     print '<'. $tag . ' ' . $class . ' >' . $content . '</'. $tag .'>';
+                      if ($content_inner != '') {
+                         print '<div ' . $class. ' >' . $content_inner . '</div>';
+                      }
                   }
-          
-                print '</div>'; 
+                  if (isset($array1['htmlafter'])) { print $array1['htmlafter']; }
+                  
+                print '</div>';
             }
             print '</div>'; 
             
