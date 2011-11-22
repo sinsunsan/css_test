@@ -11,7 +11,7 @@ include "config.php"; // Configuration file
       <?php
       
       foreach ($config['css'] as $key => $value) { // css files to be included
-        //print '<link type="text/css" rel="stylesheet" media="all" href="' . $value . '" />';
+        print '<link type="text/css" rel="stylesheet" media="all" href="' . $value . '" />';
       }
       
       ?>
@@ -40,10 +40,10 @@ include "config.php"; // Configuration file
                
                 print '<div class="test-item" title="' . $array1['title'] . '">' . $array1['title'];
                   print '<'. $tag . ' class="' . $class . '">' . $class . '</'. $tag .'>';
-                  /*if ($content != '') {
+                  if ($content != '') {
                      print '<div class="' . $array1['class']. '">' . $array1['content'] . '</div>';
                   }
-                  */
+          
                 print '</div>'; 
             }
             print '</div>'; 

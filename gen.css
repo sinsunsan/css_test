@@ -5,6 +5,7 @@
 }
 
 .test-item {
+  color: #222;
   margin-top: 24px;
   padding: 10px;
   font-size: 10px;
@@ -15,6 +16,6 @@
 
 .test-group {
   border-bottom: dotted 1px blue;
-  color: #EEE;
+  color: #222;
   padding: 20px;
 }
