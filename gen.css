@@ -1,0 +1,20 @@
+#test-container {
+  margin: auto;
+  padding: 2em;
+  width: 500px;
+}
+
+.test-item {
+  margin-top: 24px;
+  padding: 10px;
+  font-size: 10px;
+}
+.test-item div {
+  margin-top: 5px;
+}
+
+.test-group {
+  border-bottom: dotted 1px blue;
+  color: #EEE;
+  padding: 20px;
+}
